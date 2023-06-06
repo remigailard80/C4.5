@@ -1,11 +1,5 @@
 import math
 class C45:
-	def any(iterable):
-    	for element in iterable:
-    	    if element:
-    	        return True
-    	return False
-
 	"""Creates a decision tree with C4.5 algorithm"""
 	def __init__(self, pathToData,pathToNames):
 		self.filePathToData = pathToData
@@ -16,6 +10,11 @@ class C45:
 		self.attrValues = {}
 		self.attributes = []
 		self.tree = None
+	def any(iterable):
+		for element in iterable:
+			if element:
+				return True
+		return False
 
 	def fetchData(self):
 		with open(self.filePathToNames, "r") as file:
