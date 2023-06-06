@@ -33,6 +33,7 @@ class C45:
 		for index,row in enumerate(self.data):
 			for attr_index in range(self.numAttributes):
 				if(not self.isAttrDiscrete(self.attributes[attr_index])):
+					print(self.data[index][attr_index])
 					self.data[index][attr_index] = float(self.data[index][attr_index])
 
 	def printTree(self):
