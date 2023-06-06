@@ -134,11 +134,11 @@ class C45:
 				#different values of attribute i. Choose the attribute with
 				#the max gain
 				valuesForAttribute = self.attrValues[attribute]
-				print(valuesForAttribute)
+				print(self.attrValues, curData)
 				subsets = [[] for a in valuesForAttribute]
-				for row in curData:
+				for i in range(len(curData)):
+					row = curData[i]
 					for index in range(len(valuesForAttribute)):
-						print(row[index], valuesForAttribute[index])
 						if row[index] == valuesForAttribute[index]:
 							subsets[index].append(row)
 							break
