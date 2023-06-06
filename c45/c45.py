@@ -138,6 +138,7 @@ class C45:
 				subsets = [[] for a in valuesForAttribute]
 				for row in curData:
 					for index in range(len(valuesForAttribute)):
+						print(row[index], valuesForAttribute[index])
 						if row[index] == valuesForAttribute[index]:
 							subsets[index].append(row)
 							break
