@@ -1,5 +1,10 @@
 import math
 class C45:
+	def any(iterable):
+    for element in iterable:
+        if element:
+            return True
+    return False
 
 	"""Creates a decision tree with C4.5 algorithm"""
 	def __init__(self, pathToData,pathToNames):
@@ -31,7 +36,9 @@ class C45:
 
 	def preprocessData(self):
 		for index,row in enumerate(self.data):
-			print(row)
+			if (any(x == '' for x in row)):
+				del self.data[index]
+				continue
 			for attr_index in range(self.numAttributes):
 				if(not self.isAttrDiscrete(self.attributes[attr_index])):
 					# print("Attr: {0} / Value: {1}".format(self.attributes[attr_index], self.data[index][attr_index] if self.data[index][attr_index] == '' else 0))
