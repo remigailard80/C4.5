@@ -1,0 +1,17 @@
+age continuous.
+job : admin, unknown, unemployed, management, housemaid, entrepreneur, student.                                "blue-collar","self-employed","retired","technician","services") 
+marital : married, divorced, single.
+education unknown, secondary, primary, tertiary.
+default: yes, no.
+balance: continuous.
+housing: yes, no.
+loan: yes, no.
+contact: unknown, telephone, cellular.
+day: continuous.
+month: jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec.
+duration: continuous.
+campaign: continuous.
+pdays: continuous.
+previous: continuous.
+poutcome: unknown, other, failure, success.
+
