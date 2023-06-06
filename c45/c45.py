@@ -38,6 +38,9 @@ class C45:
 			if (any(x == '' for x in row)):
 				del self.data[index]
 				continue
+			if (any(x == '?' for x in row)):
+				del self.data[index]
+				continue
 			for attr_index in range(self.numAttributes):
 				if(not self.isAttrDiscrete(self.attributes[attr_index])):
 					# print("Attr: {0} / Value: {1}".format(self.attributes[attr_index], self.data[index][attr_index] if self.data[index][attr_index] == '' else 0))
@@ -108,6 +111,7 @@ class C45:
 
 
 	def allSameClass(self, data):
+		print(data)
 		for row in data:
 			if row[-1] != data[0][-1]:
 				return False
@@ -134,12 +138,12 @@ class C45:
 				#different values of attribute i. Choose the attribute with
 				#the max gain
 				valuesForAttribute = self.attrValues[attribute]
-				print(self.attrValues, curData)
 				subsets = [[] for a in valuesForAttribute]
-				for i in range(len(curData)):
-					row = curData[i]
+				for row in curData:
 					for index in range(len(valuesForAttribute)):
-						if row[index] == valuesForAttribute[index]:
+						if row[indexOfAttribute] == valuesForAttribute[index]:
+							print(row[indexOfAttribute])
+							print(valuesForAttribute[index])
 							subsets[index].append(row)
 							break
 				e = self.gain(curData, subsets)
