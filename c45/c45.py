@@ -31,10 +31,11 @@ class C45:
 
 	def preprocessData(self):
 		for index,row in enumerate(self.data):
+			print()
 			for attr_index in range(self.numAttributes):
 				if(not self.isAttrDiscrete(self.attributes[attr_index])):
-					print(self.data[index][attr_index])
-					self.data[index][attr_index] = float(self.data[index][attr_index])
+					print("Attr: {0} / Value: ${1}".format(self.attributes[attr_index], self.data[index][attr_index] if self.data[index][attr_index] == '' else 0))
+					self.data[index][attr_index] = float(self.data[index][attr_index] if self.data[index][attr_index] == '' else 0)
 
 	def printTree(self):
 		self.printNode(self.tree)
