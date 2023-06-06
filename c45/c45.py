@@ -1,10 +1,10 @@
 import math
 class C45:
 	def any(iterable):
-    for element in iterable:
-        if element:
-            return True
-    return False
+    	for element in iterable:
+    	    if element:
+    	        return True
+    	return False
 
 	"""Creates a decision tree with C4.5 algorithm"""
 	def __init__(self, pathToData,pathToNames):
