@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+from scipy.stats import t
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 from sklearn.tree import plot_tree
 from sklearn.model_selection import train_test_split
@@ -27,12 +28,12 @@ bankFileInfo = {
 }
 
 #selected File
-selectedFile = bankFileInfo
+selectedFile = adultFileInfo
 
 # Tree Model Info
 criterion="entropy"
 splitter="best"
-max_depth=5
+max_depth=3
 random_state=1
 
 # Preprocess data
@@ -88,5 +89,8 @@ predictions_labels = list(map(class_column_encoder, predictions))
 ## Error rate
 RMSE_tree = mean_squared_error(y_test_labels, predictions_labels)**0.5
 print('RMSE : ', RMSE_tree)
+
+# Calculate 95% CI
+dof = len(X_test) - 1
 
 
